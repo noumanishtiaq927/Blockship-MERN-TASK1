@@ -15,20 +15,17 @@ function SearchPage() {
 
     const wanttowatch = (dt ) => {
         dispatch(addW(dt))
-        dispatch(rmCW(dt))
-        dispatch(rmAW(dt))
+       
         console.log(dt)
     }
     const alreadywatch = (dt ) => {
         dispatch(addAW(dt))
-        dispatch(rmCW(dt))
-        dispatch(rmW(dt))
+        
         console.log(dt)
     }
     const stillwatch = (dt ) => {
         dispatch(addCW(dt))
-        dispatch(rmW(dt))
-        dispatch(rmAW(dt))
+      
         console.log(dt)
     }
 
