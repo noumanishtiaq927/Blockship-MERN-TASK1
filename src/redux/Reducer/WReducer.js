@@ -13,10 +13,12 @@ const WReducer = (state=initialState, action)=>{
             action.payload
         ]
     case WTYPES.RM_W:
-        return ( 
-            state.filter(x => x.title === action.payload.title)
+        const newstate =state.filter(x => x.title !== action.payload.title)
+        console.log(newstate)
+        return newstate;  
             
-        )
+           
+        
         default:
             return state    
 }}

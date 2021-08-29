@@ -13,7 +13,9 @@ const CWReducer = (state=initialState, action)=>{
             action.payload
         ]
     case CWTYPES.RM_CW:
-        return state.filter(x => x.title === action.payload.title)
+        const newstate =state.filter(x => x.title !== action.payload.title)
+
+        return newstate;
     default:
         return state  
 }}

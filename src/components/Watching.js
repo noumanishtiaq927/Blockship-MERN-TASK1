@@ -10,12 +10,12 @@ function Watching() {
     console.log({currentwatching})
     const wanttowatch = (dt ) => {
         dispatch(addW(dt))
-       
+       dispatch(rmCW(dt))
         console.log(dt)
     }
     const alreadywatch = (dt ) => {
         dispatch(addAW(dt))
-        
+        dispatch(rmCW(dt))
         console.log(dt)
     }
     const stillwatch = (dt ) => {
@@ -33,7 +33,7 @@ function Watching() {
                {  
                
                currentwatching?.map(dt => (
-                <div style={{width:"300px", height:'300px', backgroundColor:'black',margin:'20px',borderRadius:'10px',border:'2px solid crimson'}}>
+                <div style={{width:"300px", height:'300px', backgroundColor:'black',margin:'20px',borderRadius:'10px',border:'2px solid crimson'}} key={dt.id}>
                 <img style={{width:'90%',height:"50%",objectFit:"cover",margin:'15px  14px 0 14px',border:'2px solid salmon',borderRadius:'20px', padding:'2px'}} src={dt.poster_path ? Images + `${dt.poster_path}` : " "} alt=""/>
                 <h6 style={{color:"white",textAlign:'center'}}>{dt.title}</h6>
                 <button  style={{backgroundColor:'teal',color:'white',outline:'none',border:'1px solid wheat',width:'60%',maxWidth:'100%',  borderRadius:'3px',  height:'20px',margin:'0px 60px',transform:'translateY(-50%)' }} onClick={()=>wanttowatch(dt)}>Want TO Watch</button>

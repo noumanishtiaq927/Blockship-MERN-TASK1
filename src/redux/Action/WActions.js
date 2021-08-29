@@ -10,5 +10,6 @@ dispatch({type: WTYPES.ADD_W, payload:dt})
 }
 
 export const rmW = (dt) => dispatch => {
+    console.log(dt)
 dispatch({type:WTYPES.RM_W,payload:dt})
 }

@@ -13,7 +13,9 @@ const AWReducer = (state=initialState, action)=>{
             action.payload
         ]
     case AWTYPES.RM_AW:
-        return state.filter(x => x.title === action.payload.title)
+        const newstate =state.filter(x => x.title !== action.payload.title)
+
+        return newstate
         default:
             return state     
 }}
